@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floral Pink Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #4a2c2a;
+      background: linear-gradient(180deg, #ffe4ec 0%, #fff7fa 100%);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    header {
+      background: rgba(255, 192, 203, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 182, 193, 0.4);
+    }
+
+    nav a {
+      color: #6b2e46;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #ff4f87;
+    }
+
+    .container {
+      width: 85%;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #b03060;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .flower {
+      position: absolute;
+      width: 80px;
+      opacity: 0.3;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #b03060;
+    }
+
+    .about {
+      text-align: center;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(255, 105, 135, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #ffd6e0;
+    }
+
+    .card a {
+        display: inline-block;
+        margin-top: 10px;
+        color: #ff4f87;
+        font-weight: 600;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(255, 105, 135, 0.25);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #ff4f87;
+    }
+
+    .project-details ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin-top: 8px;
+    }
+
+    .project-details li {
+        margin-bottom: 6px;
+        line-height: 1.4;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      background: #ffd6e0;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      color: #6b2e46;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Emily Cai 🌸</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I'm a Developer 🌷</h1>
+    <p>I combine UI/UX and frontend development to build</br>meaningful digital experiences that solve real problems.</p>
+  </section>
+
+  <section id="about" class="section container about">
+    <h2>About Me</h2>
+    <p>I’m a 4th-year Computer Science student at University of California, San Diego with a minor in Design, and I
+        hold an Associate’s degree in Computer Science from City College of San Francisco. Based in San Francisco, I
+        enjoy creating projects that solve real-world problems and am always exploring new technologies and design ideas.</p>
+  </section>
+
+  <section id="projects" class="section container">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>🌸 Diabeatit!</h3>
+
+        <p>
+            An educational game to teach children ages 8–13 about Type 2 Diabetes.
+        </p>
+        <div class="project-details">
+            <h4>What I worked on:</h4>
+            <ul>
+                <li>Worked with a team to implement game mechanics in Unity</li>
+                <li>Developed educational screens about Type 2 Diabetes and improved button interactions to enhance gameplay experience</li>
+            </ul>
+        </div>
+        <a href="https://play.unity.com/en/games/3eb98973-4653-41a9-b073-38331453f3e4/lunchbox-creation" target="_blank">
+            View Project →
+        </a>
+      </div>
+      <div class="card">
+        <h3>🌷 Nature Unplugged</h3>
+        <p>A nonprofit that provides education and training to promote preventative mental health and inspire wellness in the digital age.</p>
+        <div class="project-details">
+            <h4>What I worked on:</h4>
+            <ul>
+                <li>Worked with a team to redesign the website and align with updated style guide</li>
+                <li>Created low-fidelity wireframes in Figma</li>
+                <li>Designed high-fidelity UI prototypes aligned with the style guide</li>
+                <li>Collaborated with teammates to refine layout and user flow</li>
+                <li>Implemented the final design using Squarespace</li>
+            </ul>
+        </div>
+        <a href=https://www.natureunplugged.com/ target="_blank">View Project →</a>
+    </div>
+      <div class="card">
+        <h3>🌼 COGS 127 Project</h3>
+        <p>In progress...</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section container contact">
+    <h2>Contact</h2>
+    <p>Email: e1cai@ucsd.edu</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Emily Cai 🌸</p>
+  </footer>
+
+</body>
+</html>
