@@ -1,1 +1,3 @@
-# Emily's Portfolio
+# Emily Cai's Portfolio
+
+sakura animation: github.com/jhammann/sakura
