@@ -45,5 +45,43 @@ function createSakuraRain() {
     }
 }
 
-// 在页面加载完成后调用函数创建樱花雨效果
-window.onload = createSakuraRain;
+function initTypingEffect() {
+    const elements = document.querySelectorAll(".type-on-scroll");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                typeText(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => {
+        const text = el.textContent;
+        el.textContent = "";
+        el.dataset.text = text;
+        observer.observe(el);
+    });
+
+    function typeText(el) {
+        let i = 0;
+        const text = el.dataset.text;
+
+        function typing() {
+            if (i <= text.length) {
+                el.textContent = text.slice(0, i);
+                i++;
+                setTimeout(typing, 20);
+            }
+        }
+
+        typing();
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    // 在页面加载完成后调用函数创建樱花雨效果
+    createSakuraRain();
+    initTypingEffect();
+});

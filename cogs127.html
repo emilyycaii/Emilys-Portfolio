@@ -19,6 +19,10 @@
       line-height: 1.6;
       color: #4a2c2a;
       background: linear-gradient(180deg, #ffe4ec 0%, #fff7fa 100%);
+
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     h1, h2, h3 {
@@ -63,7 +67,8 @@
     .container {
       width: 85%;
       max-width: 1000px;
-      margin: auto;
+      margin: 0 auto;
+      flex: 1;
     }
 
     section {
@@ -103,7 +108,55 @@
       padding: 30px;
       background: #ffd6e0;
       color: #6b2e46;
-      margin-top: 40px;
+      margin-top: auto;
+    }
+
+    .type-on-scroll {
+      overflow: hidden;
+    }
+
+    .sakura-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .sakura {
+      position: absolute;
+      background: radial-gradient(circle, #ffc1cc 0%, #ff9eb5 70%);
+      border-radius: 50% 50% 50% 0;
+      opacity: 0.6;
+      animation: fall linear;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+    }
+
+    .circle {
+      position: absolute;
+      background: rgba(255, 200, 215, 0.6);
+      border-radius: 50%;
+      opacity: 0.7;
+      width: 10px;
+      height: 10px;
+      animation: fall linear;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) translateX(80px) rotate(360deg);
+      }
     }
   </style>
 </head>
@@ -112,7 +165,7 @@
 
   <header>
     <h1>COGS 127 Project 🌸</h1>
-    <p>Short one-line description of your case study</p>
+    <p class="type-on-scroll">Short one-line description of your case study</p>
 
     <nav>
       <a href="#overview">Overview</a>
@@ -128,21 +181,21 @@
 
     <section id="overview">
       <h2>Overview</h2>
-      <div class="placeholder">
+      <div class="placeholder type-on-scroll">
         Write a short summary of the project, what it is, and why it matters.
       </div>
     </section>
 
     <section id="problem">
       <h2>Problem</h2>
-      <div class="placeholder">
+      <div class="placeholder type-on-scroll">
         Describe the problem you were trying to solve.
       </div>
     </section>
 
     <section id="role">
       <h2>My Role</h2>
-      <div class="placeholder">
+      <div class="placeholder type-on-scroll">
         Explain what YOU worked on in the project.
       </div>
     </section>
@@ -150,23 +203,23 @@
     <section id="process">
       <h2>Process</h2>
       <div class="grid">
-        <div class="placeholder">Research</div>
-        <div class="placeholder">Ideation</div>
-        <div class="placeholder">Design</div>
-        <div class="placeholder">Implementation</div>
+        <div class="placeholder type-on-scroll">Research</div>
+        <div class="placeholder type-on-scroll">Ideation</div>
+        <div class="placeholder type-on-scroll">Design</div>
+        <div class="placeholder type-on-scroll">Implementation</div>
       </div>
     </section>
 
     <section id="result">
       <h2>Final Outcome</h2>
-      <div class="placeholder">
+      <div class="placeholder type-on-scroll">
         Add screenshots, links, or final results here.
       </div>
     </section>
 
     <section id="reflection">
       <h2>Reflection</h2>
-      <div class="placeholder">
+      <div class="placeholder type-on-scroll">
         What you learned and what you would improve.
       </div>
     </section>
@@ -177,5 +230,6 @@
     <p>© Emily Cai 🌸 Case Study</p>
   </footer>
 
+  <script src="index.js"></script>
 </body>
 </html>
