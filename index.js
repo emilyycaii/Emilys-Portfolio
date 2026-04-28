@@ -80,6 +80,24 @@ function initTypingEffect() {
     }
 }
 
+/*********************
+* RESPONSIVE WARNING *
+*********************/
+
+const responsiveWarning = document.getElementById("responsive-warning");
+// "true" if the site is optimized for responsive design, "false" if not.
+const responsiveDesign = false;
+
+// Show mobile warning if the user is on mobile and responsive-design is false.
+if (!responsiveDesign && window.innerWidth <= 768) {
+	responsiveWarning.classList.add("show");
+}
+
+
+/***********************
+* MODE TOGGLE BEHAVIOR *
+***********************/
+
 window.addEventListener("DOMContentLoaded", () => {
     // 在页面加载完成后调用函数创建樱花雨效果
     createSakuraRain();

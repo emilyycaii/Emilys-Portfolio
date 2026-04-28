@@ -111,6 +111,16 @@
         font-weight: 600;
     }
 
+    footer a {
+      color: #b03060;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ff4f87;
+      text-decoration: underline;
+    }
+
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 12px 30px rgba(255, 105, 135, 0.25);
@@ -140,7 +150,7 @@
       background: #ffd6e0;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
+      margin-top: 100px;
       color: #6b2e46;
     }
 
@@ -191,6 +201,364 @@
       }
     }
 
+
+/* RESPONSIVE WARNING */
+#responsive-warning {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    z-index: 9999;
+}
+
+.warning-icons {
+    font-size: 10rem;
+}
+
+@media (max-width: 768px) {
+    #responsive-warning.show {
+        display: flex;
+    }
+}
+
+/* FLIP BOOK */
+#flip_book {
+    width: 298px;
+    height: 420px;
+    position: relative;
+    transition-duration: 1s;
+    perspective: 2000px;
+  margin: 40px auto 0;
+}
+
+.front_cover,
+.back_cover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2.5px 5px 5px 2.5px;
+    background-image: url(./assets/images/flip_book_edge_shading.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 192, 203);
+    border: 1px solid rgba(255, 182, 193, 0.75);
+    box-shadow: 0 0 10px 2px rgba(255, 105, 135, 0.22);
+}
+
+.front_cover {
+    position: absolute;
+    cursor: pointer;
+    transform-origin: center left;
+    transition: transform 0.5s;
+    z-index: 99;
+    transform-style: preserve-3d;
+}
+
+.front_cover label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.page {
+    width: 288px;
+    height: 400px;
+    position: absolute;
+    top: 10px;
+    left: 1px;
+    border-radius: 0 5px 5px 0;
+    background-color: white;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition-duration: 0.5s;
+    box-shadow: 0 1px 3px rgba(74, 44, 42, 0.05);
+  }
+
+  .page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 5px 5px 0;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.front_page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back_page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    z-index: 100;
+}
+
+.flip-tab {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-block;
+  padding: 2px 6px;
+  color: #b03060;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: underline;
+  z-index: 101;
+}
+
+.flip-tab.back {
+  right: auto;
+  left: 12px;
+}
+
+.page-content {
+  position: absolute;
+  inset: 0;
+  padding: 24px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #4a2c2a;
+  background: linear-gradient(180deg, #fff9fc 0%, #fff 100%);
+  border-radius: 0 5px 5px 0;
+}
+
+.page-content.back-content {
+  border-radius: 5px 0 0 5px;
+}
+
+.page-note {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 182, 193, 0.2);
+  color: #b03060;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.page-heading {
+  color: #b03060;
+  font-size: 1.5rem;
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.page-text,
+.page-list li {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: #6b2e46;
+}
+
+.page-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.page-list li + li {
+  margin-top: 6px;
+}
+
+.page-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #ff4f87;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.page-link:hover {
+  text-decoration: underline;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #b03060;
+}
+
+.page-content.back-content .page-footer {
+  justify-content: flex-start;
+}
+
+.page-number {
+  min-width: 2.8rem;
+  height: 1.9rem;
+  padding: 0 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(255, 182, 193, 0.35);
+  color: #b03060;
+  font-weight: 700;
+}
+
+.cover-title {
+  position: relative;
+  z-index: 100;
+  pointer-events: none;
+  font-family: 'Playfair Display', serif;
+  color: #6b2e46;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  transform-origin: left center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: opacity 0.5s cubic-bezier(.2,.9,.2,1), transform 0.5s cubic-bezier(.2,.9,.2,1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cover-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}}
+#cover_title_responsive {
+}
+
+@media (max-width: 420px) {
+  .cover-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Subtle fade/slide when the cover is flipped (less obvious than a hard hide) */
+#cover_checkbox:checked ~ #flip_book .front_cover .cover-title {
+  opacity: 0;
+  transform: translateX(-8px) scale(0.98);
+  pointer-events: none;
+}
+
+.edge_shading {
+    width: 288px;
+    height: 400px;
+    position: absolute;
+    z-index: 98;
+}
+
+.front_content {
+    width: 287px;
+    height: 398px;
+    position: absolute;
+    top: 1px;
+    border-radius: 0 5px 5px 0;
+    z-index: 97;
+}
+
+.back_content {
+    width: 287px;
+    height: 398px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border-radius: 5px 0 0 5px;
+    z-index: 97;
+}
+
+.back_cover {
+    position: relative;
+    z-index: -1;
+}
+
+main > input[type="checkbox"] {
+  display: none;
+}
+
+#page1 {
+    z-index: 8;
+}
+
+#page2 {
+    z-index: 5;
+}
+
+#page3 {
+    z-index: 4;
+}
+
+#page4 {
+    z-index: 3;
+}
+
+#page5 {
+    z-index: 2;
+}
+
+#cover_checkbox:checked~#flip_book {
+    transform: translateX(144px)
+}
+
+#cover_checkbox:checked~#flip_book .front_cover {
+    transform: rotateY(-180deg);
+    transition: transform 1.5s, z-index 0.5s 0.5s;
+    z-index: 1;
+}
+
+#cover_checkbox:checked~#flip_book #cover {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+}
+
+#page1_checkbox:checked~#flip_book #page1 {
+    transform: rotateY(-180deg);
+    z-index: 3;
+}
+
+#page2_checkbox:checked~#flip_book #page2 {
+    transform: rotateY(-180deg);
+    z-index: 4;
+}
+
+#page3_checkbox:checked~#flip_book #page3 {
+    transform: rotateY(-180deg);
+    z-index: 5;
+}
+
+#page4_checkbox:checked~#flip_book #page4 {
+    transform: rotateY(-180deg);
+    z-index: 6;
+}
+
+#page5_checkbox:checked~#flip_book #page5 {
+    transform: rotateY(-180deg);
+    z-index: 9;
+}
+
   </style>
 </head>
 <body>
@@ -199,9 +567,8 @@
     <h1>Emily Cai 🌸</h1>
     <nav>
       <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#flip_book">Projects</a>
+      <a href="#flip_book">Contact</a>
     </nav>
   </header>
 
@@ -212,13 +579,158 @@
       Associate’s degrees from City College of San Francisco.</p>
   </section>
 
-  <section id="about" class="section container about">
-    <h2>About Me</h2>
-    <p class="type-on-scroll">Based in San Francisco, I enjoy creating projects that solve real-world problems
-      and am always exploring new technologies and design ideas.</p>
-  </section>
+  <main>
+    <input type="checkbox" id="cover_checkbox">
+    <input type="checkbox" id="page1_checkbox">
+    <input type="checkbox" id="page2_checkbox">
+    <input type="checkbox" id="page3_checkbox">
+    <input type="checkbox" id="page4_checkbox">
 
-  <section id="projects" class="section container">
+    <!-- Flip Book -->
+    <div id="flip_book">
+        <div class="front_cover">
+          <label for="cover_checkbox" id="cover"></label>
+          <div class="cover-title">Projects<div class="cover-emoji">💐</div></div>
+        </div>
+
+        <div class="page" id="page1">
+            <div class="front_page">
+            <label class="flip-tab" for="page1_checkbox" aria-label="Flip to the next page">→</label>
+            <div class="page-content front-content">
+              <div>
+                <div class="page-heading">Intro</div>
+                <p class="page-text">Based in San Francisco, I enjoy creating projects that solve real-world problems
+      and am always exploring new technologies and design ideas.</p>
+              </div>
+              <div class="page-footer">
+                <span class="page-number">Page 1</span>
+              </div>
+            </div>
+            </div>
+
+            <div class="back_page">
+            <label class="flip-tab back" for="page1_checkbox" aria-label="Flip back to the previous page">←</label>
+            <div class="page-content back-content">
+              <div>
+                <div class="page-heading">🌸 Diabeatit!</div>
+                <p class="page-text">An educational game to teach children ages 8–13 about Type 2 Diabetes.</p>
+                <a class="page-link" href="https://play.unity.com/en/games/3eb98973-4653-41a9-b073-38331453f3e4/lunchbox-creation" target="_blank">View Project →</a>
+              </div>
+              <div class="page-footer">
+                <span class="page-number">Page 2</span>
+              </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="page" id="page2">
+            <div class="front_page">
+            <label class="flip-tab" for="page2_checkbox" aria-label="Flip to the next page">→</label>
+            <div class="page-content front-content">
+              <div>
+                <div class="page-heading">What I worked on</div>
+                <ul class="page-list">
+                  <li>Worked with a team to implement game mechanics in Unity</li>
+                  <li>Developed educational screens about Type 2 Diabetes and improved button interactions to enhance gameplay experience</li>
+                </ul>
+              </div>
+              <div class="page-footer">
+                <span class="page-number">Page 3</span>
+              </div>
+            </div>
+            </div>
+
+            <div class="back_page">
+            <label class="flip-tab back" for="page2_checkbox" aria-label="Flip back to the previous page">←</label>
+            <div class="page-content back-content">
+              <div>
+                <div class="page-heading">🌷 Nature Unplugged</div>
+                <p class="page-text">A nonprofit that provides education and training to promote preventative mental health and inspire wellness in the digital age.</p>
+                <a class="page-link" href="https://www.natureunplugged.com/" target="_blank">View Project →</a>
+              </div>
+              <div class="page-footer">
+                <span class="page-number">Page 4</span>
+              </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="page" id="page3">
+            <div class="front_page">
+            <label class="flip-tab" for="page3_checkbox" aria-label="Flip to the final page">→</label>
+            <div class="page-content front-content">
+              <div>
+                <div class="page-heading">What I worked on</div>
+                <ul class="page-list">
+                  <li>Worked with a team to redesign the website and align with updated style guide</li>
+                  <li>Created low-fidelity wireframes in Figma</li>
+                  <li>Designed high-fidelity UI prototypes aligned with the style guide</li>
+                  <li>Implemented the final design using Squarespace</li>
+                </ul>
+              </div>
+              <div class="page-footer">
+                <span class="page-number">Page 5</span>
+              </div>
+            </div>
+            </div>
+
+            <div class="back_page">
+            <label class="flip-tab back" for="page3_checkbox" aria-label="Flip back to the previous page">←</label>
+            <div class="page-content back-content">
+              <div>
+                <div class="page-heading">🌼 COGS 127 Project</div>
+                <p class="page-text">In progress...</p>
+              </div>
+              <div class="page-footer">
+                <span class="page-number">Page 6</span>
+              </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="front_page">
+            <label class="flip-tab" for="page4_checkbox" aria-label="Flip to the next page">→</label>
+            <div class="page-content front-content">
+              <div>
+                <div class="page-heading">What I worked on</div>
+                <ul class="page-list">
+                  <li>Current case study project</li>
+                  <li>In progress...</li>
+                </ul>
+              </div>
+              <div class="page-footer">
+                <span class="page-number">Page 7</span>
+              </div>
+            </div>
+            </div>
+
+            <div class="back_page">
+            <label class="flip-tab back" for="page4_checkbox" aria-label="Flip back to the previous page">←</label>
+            <div class="page-content back-content">
+              <div>
+                <div class="page-heading">Thank you</div>
+                <p class="page-text">Thanks for taking a look through my work.</p>
+              </div>
+              <div class="page-footer">
+                <span class="page-number">Page 8</span>
+              </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="back_cover"></div>
+    </div>
+
+    <!-- Responsive Warning -->
+    <div id="responsive-warning">
+        <i class="ri-error-warning-line warning-icons"></i>
+        <p>This web application is not optimized for mobile.</p>
+        <p>Please visit it on a desktop computer for the best experience.</p>
+    </div>
+  </main>
+
+  <!-- <section id="projects" class="section container">
     <h2>My Projects</h2>
     <div class="projects">
       <div class="card">
@@ -258,15 +770,11 @@
         <p>In progress...</p>
       </div>
     </div>
-  </section>
-
-  <section id="contact" class="section container contact">
-    <h2>Contact</h2>
-    <p>Email: e1cai@ucsd.edu</p>
-  </section>
+  </section> -->
 
   <footer>
-    <p>© 2026 Emily Cai 🌸</p>
+    <p>© 2026 Emily Cai</p>
+   <p>✉️ <a href="mailto:e1cai@ucsd.edu" id="contact">e1cai@ucsd.edu</a></p>
   </footer>
 
   <script src="index.js"></script>
