@@ -57,26 +57,58 @@ function initTypingEffect() {
         });
     }, { threshold: 0.2 });
 
-    elements.forEach(el => {
-        const text = el.textContent;
-        el.textContent = "";
-        el.dataset.text = text;
-        observer.observe(el);
-    });
+    elements.forEach(el => observer.observe(el));
 
     function typeText(el) {
-        let i = 0;
-        const text = el.dataset.text;
+        const paragraphs = Array.from(el.querySelectorAll("p"));
 
-        function typing() {
-            if (i <= text.length) {
-                el.textContent = text.slice(0, i);
-                i++;
-                setTimeout(typing, 20);
+        paragraphs.forEach(p => {
+            p.style.display = "none";
+        });
+
+        let paraIndex = 0;
+
+        function typeNextParagraph() {
+            if (paraIndex >= paragraphs.length) return;
+
+            const p = paragraphs[paraIndex];
+            const fullText = p.textContent.trim();
+            p.style.display = "block";
+            p.style.marginBottom = "0";
+            p.textContent = "";
+
+            let i = 0;
+            function typing() {
+                if (i <= fullText.length) {
+                    p.textContent = fullText.slice(0, i);
+                    i++;
+                    setTimeout(typing, 15);
+                } else {
+                    if (paraIndex < paragraphs.length - 1) {
+                        p.style.marginBottom = "1em";
+                    }
+                    paraIndex++;
+                    typeNextParagraph();
+                }
             }
+            typing();
         }
 
-        typing();
+        typeNextParagraph();
+    }
+}
+
+function typing() {
+    if (i <= fullText.length) {
+        p.textContent = fullText.slice(0, i);
+        i++;
+        setTimeout(typing, 15);
+    } else {
+        if (paraIndex < paragraphs.length - 1) { // ← only add margin if not last paragraph
+            p.style.marginBottom = "1em";
+        }
+        paraIndex++;
+        typeNextParagraph();
     }
 }
 
