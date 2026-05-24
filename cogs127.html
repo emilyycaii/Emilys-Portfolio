@@ -64,6 +64,28 @@
       color: #ff4f87;
     }
 
+    .project-image {
+      display: block;
+      width: min(180px, 42vw);
+      height: auto;
+      margin: 0;
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(255, 105, 135, 0.18);
+      object-fit: contain;
+    }
+
+    .prototype-image {
+      margin: 0 auto;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
     .container {
       width: 85%;
       max-width: 1000px;
@@ -78,6 +100,14 @@
     h2 {
       color: #b03060;
       margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .user-flow-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #b03060;
+      margin: 16px 0 10px;
       text-align: center;
     }
 
@@ -176,9 +206,16 @@
     <h1>COGS 127 Project 🌸</h1>
     <p class="type-on-scroll">Designing a cultural learning extension for Duolingo to help immigrants communicate more confidently in real-life conversations.</p>
 
+    <div class="image-row">
+      <img class="project-image" src="imgs/culture start.png" alt="Section Learning Culture Start Page">
+      <img class="project-image" src="imgs/culture page menu (1).png" alt="Culture Learning Page">
+      <img class="project-image" src="imgs/PK Section loading.png" alt="PK Section Loading Page">
+    </div>
+
     <nav>
       <a href="#overview">Overview</a>
       <a href="#user-research">User Research</a>
+      <a href="#prototype">Prototype</a>
       <a href="#problem">Problem</a>
       <a href="#role">My Role</a>
       <a href="#process">Process</a>
@@ -204,7 +241,7 @@
       <h2>User Research</h2>
       <div class="placeholder type-on-scroll">
         <p>We conducted semi-structured interviews with four international students who recently moved to the United States. The interviews focused on their experiences with communication, cultural adjustment, and language-learning apps like Duolingo. We asked participants about challenges in real-life conversations, experiences with slang and small talk, how they learned about American culture, and what kinds of features would help them feel more confident communicating in daily life.</p>
-
+        
         <p>Across all interviews, participants shared similar struggles with real-world communication. Even when they understood English, they often had difficulty understanding slang, jokes, tone, and knowing how to respond naturally in conversations. Many participants felt that language-learning apps only prepare users for basic situations and not real-life interactions. One participant explained that “communication also depends on cultural context, not just language.”</p>
 
         <p>Participants preferred more practical and interactive learning methods, especially role-play exercises, scenario-based conversations, visual examples, and AI conversation practice. Many also shared that real-life experience helped them learn more effectively than traditional language apps. </p>
@@ -213,6 +250,32 @@
 
         <p>Overall, our research revealed a gap between formal language learning and real-world communication. Participants wanted tools that not only teach vocabulary and grammar, but also help users understand cultural context, social norms, and everyday communication styles. These insights guided our design process and helped us create a feature that addresses the real needs of language learners in their daily lives. </p>
       </div>
+    </section>
+
+    <section id="prototype">
+      <h2>Prototype</h2>
+      <div class="placeholder type-on-scroll">
+        <p style="text-align: center;">We created three user flows each with a different approach of teaching cultural learning.</p>
+        <h2 class="user-flow-title">User Flow 1</h2>
+        <div class="image-row">
+          <img class="project-image prototype-image" src="imgs/culture start.png" alt="Section Learning Culture Start Page">
+        </div>
+        <p style="margin-top: 1rem;"> User Flow 1 teaches cultural learning through the normal section learning that Duolingo currently uses. We created questions related to culture, such as slang, abbreviations, and small talk. We added this flow to section learning because it is a familiar format for users and allows them to learn culture in the context of language learning, making it easier to understand and remember and more convenient to access while learning language skills.</p>
+        <h2 class="user-flow-title">User Flow 2</h2>
+        <div class="image-row">
+          <img class="project-image prototype-image" src="imgs/user flow 2/access culture learning 1.png" alt="Culture Learning Access - More">
+          <img class="project-image prototype-image" src="imgs/user flow 2/access culture learning 2.png" alt="Culture Learning Access - Icon">
+          <img class="project-image prototype-image" src="imgs/user flow 2/Culture page menu.png" alt="Culture Learning Home Page">
+        </div>
+        <p style="margin-top: 1rem;"> User Flow 2 provides a dedicated space for cultural learning, making it easily accessible to users who want to focus on understanding cultural nuances, such as states, abbreviations, slang, and small talk. We added this flow because it addresses the need for a more structured approach to cultural learning within the existing Duolingo framework. It also allows users to explore cultural topics whenever they want without having to read a cultural bubble like in User Flow 1.</p>
+        <h2 class="user-flow-title">User Flow 3</h2>
+        <div class="image-row">
+          <img class="project-image prototype-image" src="imgs/user flow 3/PK Section Intro.png" alt="PK Section Intro Page">
+          <img class="project-image prototype-image" src="imgs/user flow 3/PK Section loading.png" alt="PK Section Loading Page">
+          <img class="project-image prototype-image" src="imgs/user flow 3/PK Section 2 - Correct Answer Feedback.png" alt="PK Section Question Page - Correct Answer Feedback">
+          <img class="project-image prototype-image" src="imgs/user flow 3/leaderboard challenge.png" alt="PK Section Leaderboard Page">
+        </div>
+        <p style="margin-top: 1rem;"> User Flow 3 integrates cultural learning into a gameplay format and allowing users to interact with each other through a daily challenge with cultural questions, making the learning experience more engaging and interactive. We added this user flow because it addresses the need for a more engaging and interactive approach to cultural learning within the existing Duolingo framework.</p>
     </section>
 
     <section id="problem">
