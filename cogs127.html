@@ -141,18 +141,7 @@
       margin-top: auto;
     }
 
-    .type-on-scroll {
-      overflow: hidden;
-    }
-
-    .type-on-scroll p {
-      display: none;
-      margin-bottom: 0;
-    }
-
-    .type-on-scroll p.visible {
-      display: block;
-    }
+    /* Removed type-on-scroll feature: no scrolling typing effect */
 
     .sakura-container {
       position: fixed;
@@ -174,6 +163,47 @@
       animation-duration: 8s;
       animation-iteration-count: infinite;
       animation-fill-mode: forwards;
+    }
+
+    /* Ensure images in the User Testing section have a neutral background */
+    #user-testing .project-image,
+    #user-testing .project-image.prototype-image {
+      background-color: #ffffff;
+      padding: 6px;
+      border-radius: 12px;
+    }
+
+    /* Larger images and one-per-row layout for User Testing Reflection */
+    #user-testing .image-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: start;
+      justify-items: center;
+    }
+
+    #user-testing .project-image {
+      width: 100%;
+      max-width: 680px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Figure caption styling for user-testing images */
+    #user-testing .image-row figure {
+      margin: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #user-testing .image-row figcaption {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #6b2e46;
+      text-align: center;
+      max-width: 520px;
     }
 
     .circle {
@@ -204,7 +234,7 @@
 
   <header>
     <h1>COGS 127 Project 🌸</h1>
-    <p class="type-on-scroll">Designing a cultural learning extension for Duolingo to help immigrants communicate more confidently in real-life conversations.</p>
+    <p>Designing a cultural learning extension for Duolingo to help immigrants communicate more confidently in real-life conversations.</p>
 
     <div class="image-row">
       <img class="project-image" src="imgs/culture start.png" alt="Section Learning Culture Start Page">
@@ -216,11 +246,7 @@
       <a href="#overview">Overview</a>
       <a href="#user-research">User Research</a>
       <a href="#prototype">Prototype</a>
-      <a href="#problem">Problem</a>
-      <a href="#role">My Role</a>
-      <a href="#process">Process</a>
-      <a href="#result">Result</a>
-      <a href="#reflection">Reflection</a>
+      <a href="#user-testing">User Testing</a>
     </nav>
   </header>
 
@@ -228,33 +254,33 @@
 
     <section id="overview">
       <h2>Overview</h2>
-      <div class="placeholder type-on-scroll">
+      <div class="placeholder">
         <p>Duolingo helps users learn grammar and vocabulary, but it does not fully prepare people for real-life conversations. In everyday communication, people often use slang, idioms, abbreviations, and informal expressions that are difficult for new immigrants to understand.</p>
 
-        <p>To address this problem, we designed a new Culture section for Duolingo that teaches everyday language, communication styles, and social norms in the United States. The goal is to help users feel more confident and comfortable in real-world situations, not just in classroom-style learning.</p>
+        <p style="margin-top: 1rem;">To address this problem, we designed a new Culture section for Duolingo that teaches everyday language, communication styles, and social norms in the United States. The goal is to help users feel more confident and comfortable in real-world situations, not just in classroom-style learning.</p>
 
-        <p>This idea was inspired by personal experiences of moving to a new country and struggling to understand casual conversations. We wanted to create a feature that helps people feel more included, connected, and confident in their daily lives.</p>
+        <p style="margin-top: 1rem;">This idea was inspired by personal experiences of moving to a new country and struggling to understand casual conversations. We wanted to create a feature that helps people feel more included, connected, and confident in their daily lives.</p>
       </div>
     </section>
 
     <section id="user-research">
       <h2>User Research</h2>
-      <div class="placeholder type-on-scroll">
+      <div class="placeholder">
         <p>We conducted semi-structured interviews with four international students who recently moved to the United States. The interviews focused on their experiences with communication, cultural adjustment, and language-learning apps like Duolingo. We asked participants about challenges in real-life conversations, experiences with slang and small talk, how they learned about American culture, and what kinds of features would help them feel more confident communicating in daily life.</p>
         
-        <p>Across all interviews, participants shared similar struggles with real-world communication. Even when they understood English, they often had difficulty understanding slang, jokes, tone, and knowing how to respond naturally in conversations. Many participants felt that language-learning apps only prepare users for basic situations and not real-life interactions. One participant explained that “communication also depends on cultural context, not just language.”</p>
+        <p style="margin-top: 1rem;">Across all interviews, participants shared similar struggles with real-world communication. Even when they understood English, they often had difficulty understanding slang, jokes, tone, and knowing how to respond naturally in conversations. Many participants felt that language-learning apps only prepare users for basic situations and not real-life interactions. One participant explained that “communication also depends on cultural context, not just language.”</p>
 
-        <p>Participants preferred more practical and interactive learning methods, especially role-play exercises, scenario-based conversations, visual examples, and AI conversation practice. Many also shared that real-life experience helped them learn more effectively than traditional language apps. </p>
+        <p style="margin-top: 1rem;">Participants preferred more practical and interactive learning methods, especially role-play exercises, scenario-based conversations, visual examples, and AI conversation practice. Many also shared that real-life experience helped them learn more effectively than traditional language apps. </p>
 
-        <p>Another important finding was that participants often stayed quiet when they did not understand conversations because they were afraid of feeling awkward or embarrassed. One participant shared, “I just stay quiet and wait for the conversation to move on.” These responses showed that communication challenges can lead to feelings of uncertainty and isolation. </p>
+        <p style="margin-top: 1rem;">Another important finding was that participants often stayed quiet when they did not understand conversations because they were afraid of feeling awkward or embarrassed. One participant shared, “I just stay quiet and wait for the conversation to move on.” These responses showed that communication challenges can lead to feelings of uncertainty and isolation. </p>
 
-        <p>Overall, our research revealed a gap between formal language learning and real-world communication. Participants wanted tools that not only teach vocabulary and grammar, but also help users understand cultural context, social norms, and everyday communication styles. These insights guided our design process and helped us create a feature that addresses the real needs of language learners in their daily lives. </p>
+        <p style="margin-top: 1rem;">Overall, our research revealed a gap between formal language learning and real-world communication. Participants wanted tools that not only teach vocabulary and grammar, but also help users understand cultural context, social norms, and everyday communication styles. These insights guided our design process and helped us create a feature that addresses the real needs of language learners in their daily lives. </p>
       </div>
     </section>
 
     <section id="prototype">
       <h2>Prototype</h2>
-      <div class="placeholder type-on-scroll">
+      <div class="placeholder">
         <p style="text-align: center;">We created three user flows each with a different approach of teaching cultural learning.</p>
         <h2 class="user-flow-title">User Flow 1</h2>
         <div class="image-row">
@@ -278,16 +304,64 @@
         <p style="margin-top: 1rem;"> User Flow 3 integrates cultural learning into a gameplay format and allowing users to interact with each other through a daily challenge with cultural questions, making the learning experience more engaging and interactive. We added this user flow because it addresses the need for a more engaging and interactive approach to cultural learning within the existing Duolingo framework.</p>
     </section>
 
-    <section id="problem">
-      <h2>Problem</h2>
-      <div class="placeholder type-on-scroll">
-        Describe the problem you were trying to solve.
-      </div>
+    <section id="user-testing">
+      <h2>User Testing</h2>
+      <div class="placeholder">
+        <p style="text-align: center;">We conducted user testing on four participants to evaluate the effectiveness of our three user flows.</p>
+        <h2 class="user-flow-title">User Testing Methodology</h2>
+        <p>We conducted moderated usability tests with participants using interactive Duolingo culture-learning prototypes. Participants completed task-based scenarios while verbalizing their thoughts. The study evaluated three approaches to culture learning: an integrated lesson format, a dedicated culture page, and a daily challenge mode. Researchers observed user interactions, navigation patterns, task completion, and areas of confusion. Following each prototype, participants provided feedback on usability, engagement, and learning value. At the end of the session, participants compared the prototypes and discussed their preferences and suggestions for improvement.</p>
+        <h2 class="user-flow-title">User Testing Results</h2>
+        <p>Our user testing focused on understanding whether culture learning could be a meaningful extension of Duolingo's mission of helping users communicate confidently in real-world situations. We found that participants were interested in learning culture alongside language, particularly when they could freely explore topics such as slang, abbreviations, small talk, and places.</p>
+
+        <p style="margin-top: 1rem;">Participants viewed the separate culture page as the most useful learning experience because it gave them control over what they wanted to learn, while the Daily Culture Challenge was considered the most engaging due to its social and competitive elements. At the same time, testing revealed several barriers that could reduce engagement, including difficulty discovering the culture feature, confusion during matching activities, and limited visibility when the feature was placed inside the "More" menu.</p>
+
+        <p style="margin-top: 1rem;">These findings showed that for culture learning to create value for users, it must be easy to discover, easy to understand, and engaging enough to encourage continued participation. The insights gathered from testing guided our design decisions and helped ensure that our final solution supports both user needs and Duolingo's broader goal of creating effective and motivating learning experiences.</p>
+
+                <div class="image-row">
+          <figure>
+            <img class="project-image prototype-image" src="imgs/before and after stories/Fixing Cultural Homepage (3).png" alt="New Cultural Homepage">
+            <figcaption>Figure 1. Improved cultural home page: added topic icons and increased text/background contrast for readability.</figcaption>
+          </figure>
+
+          <figure>
+            <img class="project-image prototype-image" src="imgs/before and after stories/Fixing Matching Game (1).png" alt="New Matching Game Page">
+            <figcaption>Figure 2. Updated matching game: added column titles to clarify what users should match.</figcaption>
+          </figure>
+
+          <figure>
+            <img class="project-image prototype-image" src="imgs/before and after stories/strangers feature.png" alt="Strangers Feature">
+            <figcaption>Figure 3. Daily Culture Challenge: options to compete with friends or strangers and an invitation page to select friends.</figcaption>
+          </figure>
+
+          <figure>
+            <img class="project-image prototype-image" src="imgs/before and after stories/leaderboard before after.png" alt="New Leaderboard Page">
+            <figcaption>Figure 4. Renamed leaderboard to “Culture Challenge League” and added a sharing page for achievements.</figcaption>
+          </figure>
+
+          <figure>
+            <img class="project-image prototype-image" src="imgs/before and after stories/Culture Icon.png" alt="Culture Icon">
+            <figcaption>Figure 5. Redesigned culture icon from a friends-list to a globe icon to better represent cultural learning.</figcaption>
+          </figure>
+        </div>
+
+        <p style="margin-top: 1rem;">Based on user feedback, we made several improvements to better support Duolingo's goal of helping users build cultural understanding alongside language skills.</p>
+
+        <p style="margin-top: 1rem;">We redesigned the culture icon to improve discoverability after users confused the original icon with a friends feature. We also updated the culture home page with topic icons and improved contrast to make content easier to identify and read. Additionally, we created a dedicated States page to help users learn about different regions and cultural differences within a country.</p>
+
+        <p style="margin-top: 1rem;">To improve learning clarity, we added labels to the matching activity after users struggled to understand what they were supposed to match.</p>
+
+        <p style="margin-top: 1rem;">Finally, we expanded the Daily Culture Challenge by adding friend invitations, stranger matchmaking, achievement sharing, and the Culture Challenge League. These changes were inspired by participants' strong interest in social and competitive learning.</p>
+
+        <p style="margin-top: 1rem;">Together, these updates make culture learning easier to find, easier to understand, and more engaging, increasing the likelihood that users will continue exploring cultural content within Duolingo.</p>
+        <h2 class="user-flow-title">User Testing Reflection</h2>
+        <p>User testing helped us validate that culture learning is a valuable addition to Duolingo, while also revealing usability issues that we had not noticed during the design process. Although we initially focused on creating engaging cultural content, participants showed us that discoverability and clarity were just as important. Small design elements, such as icons and labels, had a significant impact on how users understood and interacted with the feature.</p>
+        
+        <p style="margin-top: 1rem;">The testing also reinforced the importance of designing around user motivations rather than our assumptions. While we expected users to prefer integrated culture lessons, participants were more excited about having a dedicated culture space and social learning opportunities. These insights helped us make more informed design decisions and create a culture-learning experience that is easier to access, understand, and engage with.</p>
     </section>
 
     <section id="role">
       <h2>My Role</h2>
-      <div class="placeholder type-on-scroll">
+      <div class="placeholder">
         Explain what YOU worked on in the project.
       </div>
     </section>
@@ -295,24 +369,10 @@
     <section id="process">
       <h2>Process</h2>
       <div class="grid">
-        <div class="placeholder type-on-scroll">Research</div>
-        <div class="placeholder type-on-scroll">Ideation</div>
-        <div class="placeholder type-on-scroll">Design</div>
-        <div class="placeholder type-on-scroll">Implementation</div>
-      </div>
-    </section>
-
-    <section id="result">
-      <h2>Final Outcome</h2>
-      <div class="placeholder type-on-scroll">
-        Add screenshots, links, or final results here.
-      </div>
-    </section>
-
-    <section id="reflection">
-      <h2>Reflection</h2>
-      <div class="placeholder type-on-scroll">
-        What you learned and what you would improve.
+        <div class="placeholder">Research</div>
+        <div class="placeholder">Ideation</div>
+        <div class="placeholder">Design</div>
+        <div class="placeholder">Implementation</div>
       </div>
     </section>
 
